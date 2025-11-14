@@ -3,10 +3,12 @@ import Header from "../components/Header";
 
 const AppLayout = () => {
   return (
-    <>
+    <div className="bg-[#FAF5F5]">
       <Header />
-      <Outlet />
-    </>
+      <div className="px-10">
+        <Outlet />
+      </div>
+    </div>
   );
 };
 

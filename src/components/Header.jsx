@@ -1,18 +1,17 @@
 import { Link } from "react-router-dom";
-import "./home.css";
 import { APP_LOGO } from "../utils/constants";
 
 const Header = () => {
   return (
     <>
-      <div className="navBar">
-        <div className="main-logo">
+      <div className="flex justify-between items-center px-10 py-4 sticky top-0 bg-white">
+        <div className=" w-[50px]">
           <Link to="/">
             <img src={APP_LOGO} alt="Logo of Insta Food Application" />
           </Link>
         </div>
-        <div className="menu-container">
-          <ul className="menu-list">
+        <div className="font-bold">
+          <ul className="flex gap-12 text-xl">
             <li>
               <Link to="/">Home</Link>
             </li>
