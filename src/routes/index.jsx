@@ -1,15 +1,21 @@
+import { lazy, Suspense } from "react";
 import { createBrowserRouter, Navigate } from "react-router-dom";
-import Home from "../pages/Home";
-import About from "../pages/About";
-import Contact from "../pages/Contact";
-import AppLayout from "../layouts/AppLayout";
-import NotFound from "../components/NotFound";
-import RestaurantDetails from "../components/RestaurantDetails";
+
+const AppLayout = lazy(() => import("../layouts/AppLayout"));
+const Home = lazy(() => import("../pages/Home"));
+const About = lazy(() => import("../pages/About"));
+const Contact = lazy(() => import("../pages/Contact"));
+const RestaurantDetails = lazy(() => import("../components/RestaurantDetails"));
+const NotFound = lazy(() => import("../components/NotFound"));
 
 const routes = createBrowserRouter([
   {
     path: "/",
-    element: <AppLayout />,
+    element: (
+      <Suspense fallback={<center>Loading...</center>}>
+        <AppLayout />
+      </Suspense>
+    ),
     errorElement: <NotFound />,
     children: [
       {

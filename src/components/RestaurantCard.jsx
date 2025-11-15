@@ -20,7 +20,6 @@ export default function RestaurantCard(props) {
         key={id}
         className="border border-gray-300 rounded-lg p-2.5 mt-4 w-[330px]"
       >
-        <p></p>
         <img
           className="h-[180px] w-full rounded-xl"
           src={RESTAURANT_THUMBNAIL + cloudinaryImageId}

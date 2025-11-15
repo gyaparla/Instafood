@@ -2,6 +2,7 @@ import RestaurantCard from "./RestaurantCard";
 import { restaurants } from "../utils/mockData";
 import { useEffect, useState } from "react";
 import { RESTAURANTS_LIST_API } from "../utils/constants";
+import CardShimmer from "../shimmer/CardShimmer";
 
 function Feed() {
   const [data, setData] = useState([]);
@@ -65,9 +66,25 @@ function Feed() {
         </div>
 
         <div className="flex flex-wrap justify-between">
-          {filteredRestaurants.map((restaurant) => (
-            <RestaurantCard key={restaurant.info.id} restaurants={restaurant} />
-          ))}
+          {filteredRestaurants.length > 0 ? (
+            filteredRestaurants.map((restaurant) => (
+              <RestaurantCard
+                key={restaurant.info.id}
+                restaurants={restaurant}
+              />
+            ))
+          ) : (
+            <>
+              <CardShimmer />
+              <CardShimmer />
+              <CardShimmer />
+              <CardShimmer />
+              <CardShimmer />
+              <CardShimmer />
+              <CardShimmer />
+              <CardShimmer />
+            </>
+          )}
         </div>
       </div>
     </>
