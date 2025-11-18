@@ -1,34 +1,32 @@
 import { useParams } from "react-router-dom";
-import useRestaurantMenu from "../utils/useRestaurantMenu";
+import { useState } from "react";
 import { menuDetails } from "../utils/mockData";
-import MenuDetails from "./CategoryAccordion";
-import { Activity, useState } from "react";
 import CategoryAccordion from "./CategoryAccordion";
 
 const RestaurantDetails = () => {
   const { resId } = useParams();
-  // const menuDetails = useRestaurantMenu(resId); // Custom hook to fetch menu details through API
-  const [showItems, setShowItems] = useState(null);
-  const [accordionIndex, setAccordionIndex] = useState(0)
-  const menuList = menuDetails;
-  const categories =
-    menuList?.data?.cards[1]?.groupedCard?.cardGroupMap?.REGULAR?.cards;
+  const [showIndex, setShowIndex] = useState(0);
 
-  const handleOpen = (value, number) => {
-    setShowItems(value)
-    setAccordionIndex(number)
-    // console.log("accordionNumber ==>", number)
+  const handleUpdateIndex = (index) => {
+    setShowIndex(showIndex === index ? null : index);
   };
+
+  const categories =
+    menuDetails?.data?.cards[1]?.groupedCard?.cardGroupMap?.REGULAR?.cards ||
+    [];
+
   return (
-    <>
-      <div>
-        {categories.map((each, index) => {
-          return (
-            <CategoryAccordion key={index} data={each} show={showItems} handleOpen={handleOpen} accordionNumber={index}/>
-          );
-        })}
-      </div>
-    </>
+    <div>
+      {categories.map((category, index) => (
+        <CategoryAccordion
+          key={index}
+          data={category?.card?.card}
+          showItems={index === showIndex ? true : false}
+          onToggle={() => handleUpdateIndex(index)}
+        />
+      ))}
+    </div>
   );
 };
+
 export default RestaurantDetails;
