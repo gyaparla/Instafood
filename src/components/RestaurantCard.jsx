@@ -13,9 +13,11 @@ export default function RestaurantCard(props) {
     promoted,
   } = props?.restaurants?.info;
 
-  console.log(props?.restaurants?.info);
   return (
-    <Link to={`restaurants/menu/${id}`}>
+    <Link
+      to={`restaurants/menu/${id}`}
+      state={{restaurantDetails: name, locality:locality }}
+    >
       <div
         key={id}
         className="border border-gray-300 rounded-lg p-2.5 mt-4 w-[330px]"

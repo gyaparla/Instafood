@@ -1,7 +1,11 @@
 import { Link } from "react-router-dom";
 import { APP_LOGO } from "../utils/constants";
+import { useContext } from "react";
+import { userContext } from "../context/userContext";
 
 const Header = () => {
+
+  const userName = useContext(userContext)
   return (
     <>
       <div className="flex justify-between items-center px-10 py-4 sticky top-0 bg-white">
@@ -12,6 +16,7 @@ const Header = () => {
         </div>
         <div className="font-bold">
           <ul className="flex gap-12 text-xl">
+            <li className="text-amber-600">{userName.userName}</li>
             <li>
               <Link to="/">Home</Link>
             </li>
