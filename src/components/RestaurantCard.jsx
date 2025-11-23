@@ -20,7 +20,7 @@ export default function RestaurantCard(props) {
     >
       <div
         key={id}
-        className="border border-gray-300 rounded-lg p-2.5 mt-4 w-[330px]"
+        className="border border-gray-300 rounded-lg p-2.5 mt-4 w-[330px] dark:text-amber-50"
       >
         <img
           className="h-[180px] w-full rounded-xl"

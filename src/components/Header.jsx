@@ -1,22 +1,18 @@
 import { Link } from "react-router-dom";
 import { APP_LOGO } from "../utils/constants";
-import { useContext } from "react";
-import { userContext } from "../context/userContext";
+import SwitchButton from "./SwitchButton";
 
 const Header = () => {
-
-  const userName = useContext(userContext)
   return (
     <>
-      <div className="flex justify-between items-center px-10 py-4 sticky top-0 bg-white">
+      <div className="flex justify-between items-center px-10 py-4 sticky top-0 bg-white dark:bg-black dark:border-b border-orange-500">
         <div className=" w-[50px]">
           <Link to="/">
             <img src={APP_LOGO} alt="Logo of Insta Food Application" />
           </Link>
         </div>
-        <div className="font-bold">
-          <ul className="flex gap-12 text-xl">
-            <li className="text-amber-600">{userName.userName}</li>
+        <div className="font-bold dark:text-amber-50">
+          <ul className="flex gap-8 text-xl">
             <li>
               <Link to="/">Home</Link>
             </li>
@@ -31,6 +27,9 @@ const Header = () => {
             </li>
             <li>
               <Link to="/contact">Contact Us</Link>
+            </li>
+            <li>
+              <SwitchButton />
             </li>
           </ul>
         </div>
