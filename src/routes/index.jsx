@@ -1,5 +1,6 @@
 import { lazy, Suspense } from "react";
 import { createBrowserRouter, Navigate } from "react-router-dom";
+import Cart from "../pages/Cart";
 
 const AppLayout = lazy(() => import("../layouts/AppLayout"));
 const Home = lazy(() => import("../pages/Home"));
@@ -33,6 +34,10 @@ const routes = createBrowserRouter([
       {
         path: "restaurants/menu/:resId",
         element: <RestaurantDetails />,
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
       },
     ],
   },

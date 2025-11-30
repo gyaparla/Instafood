@@ -1,18 +1,12 @@
-import { useEffect } from "react";
-import { useTheme } from "../context/themeContext";
+import useTheme from "../hooks/useTheme";
 
 const SwitchButton = () => {
-  const { themeMode, setThemeMode } = useTheme();
+  const [themeMode, setThemeMode] = useTheme();
 
   const handleTheme = () => {
-    themeMode === "light" ? setThemeMode("dark") : setThemeMode("light")
-  }
+    themeMode === "light" ? setThemeMode("dark") : setThemeMode("light");
+  };
 
-  useEffect(() => {
-    document.querySelector("html").classList.remove("dark", "light");
-
-    document.querySelector("html").classList.add(themeMode);
-  }, [themeMode]);
   return (
     <div>
       <input

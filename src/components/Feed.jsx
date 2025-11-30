@@ -1,5 +1,4 @@
 import RestaurantCard from "./RestaurantCard";
-import { restaurants } from "../utils/mockData";
 import { useEffect, useState } from "react";
 import { RESTAURANTS_LIST_API } from "../utils/constants";
 import CardShimmer from "../shimmer/CardShimmer";
@@ -44,7 +43,7 @@ function Feed() {
         <div className="flex gap-20 py-6">
           <div>
             <input
-              className="outline-0 border-2 border-amber-500 rounded-md py-0.5 pl-1"
+              className="outline-0 border-2 border-amber-500 rounded-md py-0.5 pl-1 dark:text-amber-50"
               type="text"
               placeholder="Search..."
               value={searchValue}
