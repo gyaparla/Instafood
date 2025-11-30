@@ -1,22 +1,14 @@
 import { Link } from "react-router-dom";
 import { RESTAURANT_THUMBNAIL } from "../utils/constants";
 
-export default function RestaurantCard(props) {
-  const {
-    id,
-    name,
-    avgRating,
-    sla,
-    cuisines,
-    locality,
-    cloudinaryImageId,
-    promoted,
-  } = props?.restaurants?.info;
+export default function RestaurantCard({ cardDetails }) {
+  const { id, name, avgRating, sla, cuisines, locality, cloudinaryImageId } =
+    cardDetails;
 
   return (
     <Link
       to={`restaurants/menu/${id}`}
-      state={{restaurantDetails: name, locality:locality }}
+      state={{ restaurantDetails: name, locality: locality }}
     >
       <div
         key={id}

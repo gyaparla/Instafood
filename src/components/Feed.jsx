@@ -69,7 +69,7 @@ function Feed() {
             filteredRestaurants.map((restaurant) => (
               <RestaurantCard
                 key={restaurant.info.id}
-                restaurants={restaurant}
+                cardDetails={restaurant.info}
               />
             ))
           ) : (
