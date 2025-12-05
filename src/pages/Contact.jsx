@@ -115,7 +115,7 @@ const Contact = () => {
               name="name"
               value={formData.name}
               onChange={handleChange}
-              placeholder="John Doe"
+              placeholder="Your Name"
               autoComplete="off"
               className={`w-full px-4 py-2 md:py-3 border rounded-lg outline-none transition-colors dark:bg-gray-800 dark:text-white ${
                 errors.name
@@ -146,11 +146,11 @@ const Contact = () => {
             </label>
             <input
               id="email"
-              type="email"
+              // type="email"
               name="email"
               value={formData.email}
               onChange={handleChange}
-              placeholder="you@example.com"
+              placeholder="abc@gmail.com"
               autoComplete="off"
               className={`w-full px-4 py-2 md:py-3 border rounded-lg outline-none transition-colors dark:bg-gray-800 dark:text-white ${
                 errors.email
@@ -235,7 +235,7 @@ const Contact = () => {
                 Phone
               </p>
               <p className="text-gray-600 dark:text-gray-400">
-                +1 (555) 123-4567
+                +91 (000) 123-4567
               </p>
             </div>
           </div>
