@@ -55,13 +55,13 @@ const Header = () => {
             </li>
           ))}
           <li className="flex items-center">
-            <SwitchButton />
+            <SwitchButton testId={"theme-switch-desktop"} />
           </li>
         </ul>
 
         {/* Mobile Menu Button & Theme Toggle */}
         <div className="md:hidden flex items-center gap-3">
-          <SwitchButton />
+          <SwitchButton testId={"theme-switch-mobile"} />
           <button
             onClick={toggleMenu}
             className="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded transition-colors text-2xl dark:text-white"

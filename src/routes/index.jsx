@@ -32,7 +32,7 @@ const routes = createBrowserRouter([
         element: <Contact />,
       },
       {
-        path: "restaurants/menu/:resId",
+        path: "/restaurants/menu/:resId",
         element: <RestaurantDetails />,
       },
       {

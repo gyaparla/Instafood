@@ -1,7 +1,7 @@
 import useTheme from "../hooks/useTheme";
 import { BsSun, BsMoon } from "react-icons/bs";
 
-const SwitchButton = () => {
+const SwitchButton = ({ testId }) => {
   const [themeMode, setThemeMode] = useTheme();
 
   const handleThemeToggle = () => {
@@ -13,7 +13,7 @@ const SwitchButton = () => {
       onClick={handleThemeToggle}
       className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors flex items-center justify-center"
       aria-label={`Switch to ${themeMode === "light" ? "dark" : "light"} mode`}
-      data-testid="theme-switch"
+      data-testid={testId}
       type="button"
     >
       {themeMode === "light" ? (

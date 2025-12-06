@@ -10,3 +10,5 @@ export const RESTAURANT_THUMBNAIL =
 
 export const RESTAURANT_MENU_API =
   "https://proxy.corsfix.com/?https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=17.4875418&lng=78.3953462&restaurantId=";
+
+export const USE_MOCK = true;

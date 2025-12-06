@@ -1,6 +1,5 @@
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import Contact from "../pages/Contact";
-import { expect, it } from "vitest";
 
 /* eslint-disable no-undef */
 describe("Contact Us Page", () => {

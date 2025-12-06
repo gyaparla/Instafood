@@ -4,7 +4,7 @@ import { ThemeProvider } from "../context/themeContext";
 
 const AppLayout = () => {
   return (
-    <div className="bg-[#FAF5F5] dark:bg-black">
+    <div className="dark:bg-black">
       <Header />
       <div className="px-10">
         <Outlet />
