@@ -5,14 +5,8 @@ import CategoryAccordion from "./CategoryAccordion";
 
 const RestaurantDetails = () => {
   const location = useLocation();
-  const {
-    restaurantDetails,
-    locality,
-    avgRating,
-    cuisines,
-    costForTwo,
-    deliveryTime,
-  } = location.state || {};
+  const { restaurantDetails, locality, avgRating, costForTwo, deliveryTime } =
+    location.state || {};
 
   const [showIndex, setShowIndex] = useState(0);
 
@@ -39,7 +33,6 @@ const RestaurantDetails = () => {
         </h1>
         <div className="mt-2 flex flex-wrap justify-center sm:justify-start gap-4 text-gray-700 dark:text-gray-300">
           {avgRating && <span>⭐ {avgRating}</span>}
-          {cuisines && <span>{cuisines.join(", ")}</span>}
           {costForTwo && <span>💰 {costForTwo}</span>}
           {deliveryTime && <span>⏱ {deliveryTime}</span>}
         </div>
